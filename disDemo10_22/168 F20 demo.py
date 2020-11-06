@@ -71,9 +71,9 @@ Edges are number of organizations that both nodes are affiliated with.
 (Projection from a bipartite network.)
 '''
 
-f = open("PREVERE1MODE.csv")
+f = open("PREVERE1.csv")
 ncols = len(f.readline().split(','))
-df = pd.read_csv("PREVERE1MODE.csv", skiprows = 1, usecols = range(1, ncols), header = None)    # skips the top row in the file and only uses columns 1 though ncols (using 0-indicing). Tells pandas not to expect a header
+df = pd.read_csv("PREVERE1.csv", skiprows = 1, usecols = range(1, ncols), header = None)    # skips the top row in the file and only uses columns 1 though ncols (using 0-indicing). Tells pandas not to expect a header
 print(df) # notice the column names are 1, ...., ncols-1
 col_names = {i : i-1 for i in range(1, ncols)}  # Column names must match column indices (It's what networkx wants, I don't know why.)
 df = df.rename(columns = col_names) # Renaming columns so that column names match column indices.
